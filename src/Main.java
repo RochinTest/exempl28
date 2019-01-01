@@ -6,19 +6,18 @@
 public class Main {
 
     public static void main(String[] args) {
-        int a = (int) (Math.random() * 28799 + 1);
-        int hours = (a / 3600);
-        System.out.println(a);
-
-        if (hours == 0) {
-            System.out.println("Осталось меньше часа");
-
-        } else if (hours >= 5) {
-            System.out.println(" Осталось " + hours + " часов ");
-
-        } else {
-            System.out.println(" Осталось " + hours + " часа ");
-
+        int[] s = new int[8];
+        for (int i = 0; i < 8; i++) {
+            s[i] = (int) (Math.random() * 9 + 1);
+            System.out.print(s[i]);
+        }
+        System.out.println();
+        for (int j = 0; j < 8; j++) {
+            if (j % 2 == 0) {
+                s[j] = 0;
+            }
+            System.out.print(s[j]);
         }
     }
 }
+
