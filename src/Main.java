@@ -6,17 +6,19 @@
 public class Main {
 
     public static void main(String[] args) {
-        int[] s = new int[3];
-        int accum = 0;
-        int a = (int) (Math.random() * 899 + 100);
-        int b = a;
-        for (int i = 0; a != 0; a /= 10, i++) {
-            accum = Math.max(accum, a % 10);
+        int a = (int) (Math.random() * 28799 + 1);
+        int hours = (a / 3600);
+        System.out.println(a);
 
+        if (hours == 0) {
+            System.out.println("Осталось меньше часа");
+
+        } else if (hours >= 5) {
+            System.out.println(" Осталось " + hours + " часов ");
+
+        } else {
+            System.out.println(" Осталось " + hours + " часа ");
 
         }
-
-        System.out.println("В числе " + b + " наибольшая цифра " + accum);
-
     }
 }
