@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 //). Создать программу, выводящую на экран случайно сгенерированное трёхзначное
 // натуральное число и его наибольшую цифру.
 //Примеры работы программы:
@@ -12,12 +14,10 @@ public class Main {
             System.out.print(s[i]);
         }
         System.out.println();
-        for (int j = 0; j < 8; j++) {
-            if (j % 2 == 0) {
-                s[j] = 0;
-            }
-            System.out.print(s[j]);
+        for (int i = 0; i < 4; i++) {
+            s[2*i] = 0;
         }
+        Arrays.stream(s).forEach(System.out::print);
     }
 }
 
