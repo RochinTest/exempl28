@@ -8,16 +8,27 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
-        int[] s = new int[8];
-        for (int i = 0; i < 8; i++) {
-            s[i] = (int) (Math.random() * 9 + 1);
-            System.out.print(s[i]);
+        int a = 0, b = 0;
+        int[] s = new int[5];
+        int[] l = new int[5];
+        for (int i = 0; i < 5; i++) {
+            s[i] = (int) (Math.random() * 5);
+            l[i] = (int) (Math.random() * 5);
+            a = (a + s[i]);
+            b = (b + l[i]);
         }
-        System.out.println();
-        for (int i = 0; i < 4; i++) {
-            s[2*i] = 0;
+        a = a / 5;
+        b = b / 5;
+        {
         }
+
         Arrays.stream(s).forEach(System.out::print);
+        System.out.println();
+        Arrays.stream(l).forEach(System.out::print);
+        System.out.println();
+        if (a > b) System.out.println("среднее арифметическое масива 1 больше");
+        else if (a < b) System.out.println("среднее арифметическое масива 2 больше");
+        else System.out.println(" среднее арифметическое масивов равны");
     }
 }
 
