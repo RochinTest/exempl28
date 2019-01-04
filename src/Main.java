@@ -1,65 +1,55 @@
-//import java.util.Scanner;
+import java.util.Scanner;
 
-// Программа должна создать массив из 12 случайных целых чисел из отрезка [-10;10]
-// таким образом, чтобы отрицательных и положительных элементов там было поровну
-// и не было нулей. При этом порядок следования элементов должен быть случаен
-// (т. е. не подходит вариант, когда в массиве постоянно выпадает сначала 6 положительных,
-// а потом 6 отрицательных чисел или же когда элементы постоянно чередуются через один и пр.).
-// Вывести полученный массив на экран.
+//Пользователь вводит с клавиатуры натуральное число большее 3,
+// которое сохраняется в переменную n. Если пользователь ввёл не
+// подходящее число, то программа должна просить пользователя повторить ввод.
+// Создать массив из n случайных целых чисел из отрезка [0;n] и
+// вывести его на экран. Создать второй массив только из чётных
+// элементов первого массива, если они там есть, и вывести его на экран.
 public class Main {
 
     public static void main(String[] args) {
-        int m = 0, n = 0;
+        int m = 0; //n = 0;
         int j = 0;
 
-        // System.out.println("Введите чётное положительное число:");
-        // Scanner sc = new Scanner(System.in);
-        // M:
-        //for (int i = 0; i < 10; i++) {
-        //  if (sc.hasNextInt()) {
-        // m = sc.nextInt();
-        //  }
-
-        //if (m > 0 && m % 2 == 0) {
-        // break M;
-        // } else System.out.println("Число не верное,Введите чётное положительное число ");
-        // }
-        int[] s = new int[10];
-        int i = 0;
-
-        while (i < 10) {
-
-            s[i] = (int) (Math.random() * 22 - 11);
-            if (s[i] == 0) {
-                continue;
-            } else if (s[i] > 0) {
-                m++;
-            } else if (s[i] < 0) {
-                n++;
+        System.out.println("Введите натуральное число больше 3:");
+        Scanner sc = new Scanner(System.in);
+        M:
+        for (int i = 0; i < 10; i++) {
+            if (sc.hasNextInt()) {
+                m = sc.nextInt();
             }
 
+            if (m > 3) {
+                break M;
+            } else System.out.println("Число не верное,введите натуральное число больше 3: ");
+        }
+        int[] s = new int[m];
+        int[] l = new int[m];
+
+
+        for (int i = 0; i < s.length; i++) {
+
+            s[i] = (int) (Math.random() * m);
             System.out.print(" " + s[i]);
-            i++;
+            if (s[i] % 2 == 0) {
+                l[i] = s[i];
+               // ++j;
+            }//else break;
         }
         System.out.println();
-        System.out.println(m + " " + n);
-        m = 0;n=0;
-        while (j < 10) {
-            if (m > n && s[j] > 0) {
-                s[j] *= -1;
-            }else if (m<n && s[j]<0){s[j]*=-1;}
-            if (s[j] > 0) {
-                m++;
-            } else if (s[j] < 0) {
-                n++;
-            }
-            System.out.print(" " + s[j]);
-            j++;
-        }System.out.println();
-        System.out.println(m + " " + n);
+        for (; j < l.length; j++)
+            if (l[j]!=0){System.out.print(" " + l[j]);}
+            //System.out.print(" " + l[j]);
     }
-
 }
+
+
+
+
+
+
+
 
 
 
